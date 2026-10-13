@@ -1,0 +1,35 @@
+name: Build unsigned iOS IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate Xcode project
+        run: xcodegen generate
+      - name: Build app
+        run: >-
+          xcodebuild -project CiDarenBuddy.xcodeproj
+          -scheme CiDarenBuddy
+          -sdk iphoneos
+          -configuration Release
+          -derivedDataPath build/DerivedData
+          CODE_SIGNING_ALLOWED=NO
+          build
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R build/DerivedData/Build/Products/Release-iphoneos/CiDarenBuddy.app build/Payload/
+          cd build
+          zip -qr CiDarenBuddy-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CiDarenBuddy-unsigned-ipa
+          path: build/CiDarenBuddy-unsigned.ipa
