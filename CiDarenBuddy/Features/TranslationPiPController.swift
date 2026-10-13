@@ -120,7 +120,7 @@ final class TranslationPiPController: NSObject, ObservableObject, AVPictureInPic
                 in: CGRect(x: 34, y: 28, width: width - 68, height: 38),
                 withAttributes: [
                     .font: UIFont.systemFont(ofSize: 24, weight: .semibold),
-                    .foregroundColor: UIColor(red: 0.22, green: 0.36, blue: 0.30)
+                    .foregroundColor: UIColor(red: 0.22, green: 0.36, blue: 0.30, alpha: 1)
                 ]
             )
             (String(original.prefix(100)) as NSString).draw(
@@ -134,7 +134,7 @@ final class TranslationPiPController: NSObject, ObservableObject, AVPictureInPic
                 in: CGRect(x: 34, y: 230, width: width - 68, height: 150),
                 withAttributes: [
                     .font: UIFont.systemFont(ofSize: 29, weight: .semibold),
-                    .foregroundColor: UIColor(red: 0.22, green: 0.36, blue: 0.30)
+                    .foregroundColor: UIColor(red: 0.22, green: 0.36, blue: 0.30, alpha: 1)
                 ]
             )
         }
