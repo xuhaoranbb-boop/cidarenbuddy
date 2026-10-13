@@ -132,8 +132,6 @@ final class LiveCaptureManager: NSObject, ObservableObject, SCContentSharingPick
         let configuration = SCStreamConfiguration()
         configuration.width = 900
         configuration.height = 1950
-        configuration.minimumFrameInterval = CMTime(value: 1, timescale: 50)
-        configuration.queueDepth = 2
         configuration.capturesAudio = false
 
         let newStream = SCStream(filter: filter, configuration: configuration, delegate: self)
