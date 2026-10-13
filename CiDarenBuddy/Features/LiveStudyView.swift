@@ -158,7 +158,7 @@ struct LiveStudyView: View {
                 .font(.title3.weight(.semibold))
             Spacer()
             if isTranslating { ProgressView().controlSize(.small) }
-            Text("采帧目标 20 ms · OCR 耗时见状态栏")
+            Text("实时采帧 · OCR 耗时见状态栏")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
