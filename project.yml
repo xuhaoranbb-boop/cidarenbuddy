@@ -17,8 +17,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.cidarenbuddy.ios
         INFOPLIST_KEY_CFBundleDisplayName: 词伴
-        GENERATE_INFOPLIST_FILE: YES
     info:
+      path: Info.plist
       properties:
         UIBackgroundModes:
           - screen-capture
