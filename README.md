@@ -26,7 +26,7 @@ xcodebuild -project CiDarenBuddy.xcodeproj -scheme CiDarenBuddy -sdk iphoneos -c
 ## 当前范围
 
 - 持续屏幕读取：ScreenCaptureKit iOS 27 全屏共享流
-- OCR：Apple Vision 快速模式，本地处理；采帧目标间隔 20 ms，单帧处理，避免积压
+- OCR：Apple Vision 快速模式，本地处理；采帧由系统调度，单帧处理，避免积压
 - 翻译：Apple Translation，中英方向可切换
 - 拼写检查：iOS `UITextChecker` 候选建议与答案匹配
 - 生词本：本地保存、可删除
