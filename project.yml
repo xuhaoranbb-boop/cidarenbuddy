@@ -1,0 +1,25 @@
+name: CiDarenBuddy
+options:
+  bundleIdPrefix: app.cidarenbuddy
+  deploymentTarget:
+    iOS: "27.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1"
+targets:
+  CiDarenBuddy:
+    type: application
+    platform: iOS
+    sources:
+      - path: CiDarenBuddy
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.cidarenbuddy.ios
+        INFOPLIST_KEY_CFBundleDisplayName: 词伴
+        GENERATE_INFOPLIST_FILE: YES
+    info:
+      properties:
+        UIBackgroundModes:
+          - screen-capture
+          - audio
